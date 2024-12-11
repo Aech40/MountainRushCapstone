@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://pck5unc510s"]
+
+[ext_resource type="FontFile" path="res://Fonts/SmallFont.tres" id="2"]
+[ext_resource type="FontFile" uid="uid://dy0k4h210iiyt" path="res://Fonts/Daydream.ttf" id="2_fri02"]
+[ext_resource type="FontFile" path="res://Fonts/BigFont.tres" id="3"]
+[ext_resource type="Script" path="res://Nodes/gui/WinScreen.gd" id="4"]
+
+[node name="WinScreen" type="CenterContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 28
+
+[node name="Stage Complete" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_fri02")
+theme_override_font_sizes/font_size = 30
+text = "STAGE COMPLETE !"
+
+[node name="TimeLabel" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2")
+text = "Stage Time: "
+
+[node name="NewBestTimeLabel" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+modulate = Color(0.388235, 0.894118, 0.101961, 1)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3")
+text = "New Best TIME!"
+
+[node name="TimeLabel2" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2")
+text = "Press any key to continue..."
