@@ -1,0 +1,16 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c8e58cggtiopx"
+path="res://.godot/imported/TestTrack-1.obj-dd7c32ae0fc68c3b095d5a3844ec0e0a.mesh"
+
+[deps]
+
+source_file="res://assets/Tracks/TestTrack-1.obj"
+dest_files=["res://.godot/imported/TestTrack-1.obj-dd7c32ae0fc68c3b095d5a3844ec0e0a.mesh"]
+
+[params]
+
+dummy_value_ignore_me=0
