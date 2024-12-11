@@ -1,0 +1,89 @@
+[gd_scene load_steps=6 format=3 uid="uid://bcktmi3i0hjua"]
+
+[ext_resource type="Script" path="res://Screens/options.gd" id="1_ttn2r"]
+[ext_resource type="Texture2D" uid="uid://bpr0poml7586m" path="res://assets/Background/selectSky.png" id="2_umfdv"]
+[ext_resource type="FontFile" uid="uid://dy0k4h210iiyt" path="res://Fonts/Daydream.ttf" id="3_nw4kq"]
+[ext_resource type="FontFile" path="res://Fonts/SmallFont.tres" id="4_lsn7a"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t4so6"]
+texture = ExtResource("2_umfdv")
+
+[node name="Options" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ttn2r")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_t4so6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -263.0
+offset_top = -201.0
+offset_right = 198.0
+offset_bottom = 91.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Fullscreen" type="CheckButton" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_nw4kq")
+text = "Fullscreen"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_nw4kq")
+text = "Volume:"
+
+[node name="Volume" type="HSlider" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.05
+
+[node name="Rules of" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("3_nw4kq")
+text = "Rules of Rallly"
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("4_lsn7a")
+text = "Acceleration: W/Up Arrow
+
+
+Steer left: A/ Left Arrow
+
+
+Steer Right: D/ Right Arrow
+
+
+Brake: S/ Down Arrow
+
+
+Hanbrake (Drift): Space Bar"
+
+[connection signal="toggled" from="VBoxContainer/Fullscreen" to="." method="_on_fullscreen_toggled"]
+[connection signal="mouse_exited" from="VBoxContainer/HBoxContainer/Volume" to="." method="_on_volume_mouse_exited"]
+[connection signal="value_changed" from="VBoxContainer/HBoxContainer/Volume" to="." method="_on_value_changed"]

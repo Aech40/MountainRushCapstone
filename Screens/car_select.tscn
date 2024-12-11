@@ -1,0 +1,113 @@
+[gd_scene load_steps=9 format=3 uid="uid://cjexkri41xsq5"]
+
+[ext_resource type="Script" path="res://Screens/car_select.gd" id="1_kqwmq"]
+[ext_resource type="Texture2D" uid="uid://bpr0poml7586m" path="res://assets/Background/selectSky.png" id="2_tb8l7"]
+[ext_resource type="Texture2D" uid="uid://c0kwj073hs6iw" path="res://assets/Background/ventura.png" id="3_bc8s4"]
+[ext_resource type="FontFile" path="res://Fonts/SmallFont.tres" id="4_gaste"]
+[ext_resource type="FontFile" uid="uid://dy0k4h210iiyt" path="res://Fonts/Daydream.ttf" id="4_p5nrm"]
+[ext_resource type="Texture2D" uid="uid://l5uw5sedg3s0" path="res://assets/Background/tau.png" id="6_btdhy"]
+[ext_resource type="AudioStream" uid="uid://gkxs5tb3xikk" path="res://assets/Audio/Music/Cisco Kid Funktion-analog mastering CSM.wav" id="7_vtot0"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_71yye"]
+texture = ExtResource("2_tb8l7")
+
+[node name="car_select" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kqwmq")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_71yye")
+
+[node name="Cars" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -434.0
+offset_top = -184.0
+offset_right = 434.0
+offset_bottom = 130.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Car1" type="VBoxContainer" parent="Cars"]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="Car1Image" type="TextureRect" parent="Cars/Car1"]
+layout_mode = 2
+texture = ExtResource("3_bc8s4")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="Car1" type="Button" parent="Cars/Car1"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("4_p5nrm")
+text = "Ventura  Erato  VRS"
+
+[node name="Car1Info" type="Label" parent="Cars/Car1"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_gaste")
+text = "Engine: 2.8L V6
+HP: 320.0 HP
+Weight: 2732.4 LBS"
+
+[node name="Car2" type="VBoxContainer" parent="Cars"]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="Car2Image" type="TextureRect" parent="Cars/Car2"]
+layout_mode = 2
+texture = ExtResource("6_btdhy")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="Car2" type="Button" parent="Cars/Car2"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("4_p5nrm")
+text = "TAU  Kingfisher VF"
+
+[node name="Car2Info" type="Label" parent="Cars/Car2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_gaste")
+text = "
+Engine: 3.0L V6
+HP: 319.4 HP
+Weight: 2713.9 LBS"
+
+[node name="Car3" type="VBoxContainer" parent="Cars"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="Car3" type="Button" parent="Cars/Car3"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("4_gaste")
+text = "Car 3"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_vtot0")
+volume_db = -34.991
+
+[connection signal="pressed" from="Cars/Car1/Car1" to="." method="_on_car_1_pressed"]
+[connection signal="pressed" from="Cars/Car2/Car2" to="." method="_on_car_2_pressed"]
+[connection signal="pressed" from="Cars/Car3/Car3" to="." method="_on_car_3_pressed"]

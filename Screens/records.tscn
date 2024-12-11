@@ -1,0 +1,113 @@
+[gd_scene load_steps=6 format=3 uid="uid://c2crom7yy77en"]
+
+[ext_resource type="Script" path="res://Screens/records.gd" id="1_xhwtj"]
+[ext_resource type="Texture2D" uid="uid://bpr0poml7586m" path="res://assets/Background/selectSky.png" id="2_m2j6x"]
+[ext_resource type="FontFile" uid="uid://dy0k4h210iiyt" path="res://Fonts/Daydream.ttf" id="3_vtrvd"]
+[ext_resource type="FontFile" path="res://Fonts/SmallFont.tres" id="4_8ye17"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p8lbq"]
+texture = ExtResource("2_m2j6x")
+
+[node name="records" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xhwtj")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_p8lbq")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -95.0
+offset_top = -169.0
+offset_right = 95.0
+offset_bottom = -136.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_vtrvd")
+theme_override_font_sizes/font_size = 24
+text = "Records "
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -358.5
+offset_top = -52.0
+offset_right = 358.5
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Stage 1" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Speedy Sands" type="Label" parent="HBoxContainer/Stage 1"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_vtrvd")
+theme_override_font_sizes/font_size = 17
+text = "Speedy Sands"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/Stage 1"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_8ye17")
+theme_override_font_sizes/font_size = 10
+text = "Fastest Time: 0:00"
+horizontal_alignment = 1
+
+[node name="Stage 2" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Alpine Apex" type="Label" parent="HBoxContainer/Stage 2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_vtrvd")
+theme_override_font_sizes/font_size = 17
+text = "Alpine Apex"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/Stage 2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_8ye17")
+theme_override_font_sizes/font_size = 10
+text = "Fastest Time: 00:00"
+horizontal_alignment = 1
+
+[node name="Stage 3" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Monster Motorway" type="Label" parent="HBoxContainer/Stage 3"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_vtrvd")
+theme_override_font_sizes/font_size = 17
+text = "Monster Motorway"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/Stage 3"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_8ye17")
+theme_override_font_sizes/font_size = 10
+text = "Fastest Time: 00:00"
+horizontal_alignment = 1

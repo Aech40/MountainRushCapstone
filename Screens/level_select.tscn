@@ -1,0 +1,102 @@
+[gd_scene load_steps=8 format=3 uid="uid://ba2sbrkg8ye5k"]
+
+[ext_resource type="Script" path="res://Screens/level_select.gd" id="1_3pjre"]
+[ext_resource type="Texture2D" uid="uid://bpr0poml7586m" path="res://assets/Background/selectSky.png" id="2_0cpmf"]
+[ext_resource type="FontFile" uid="uid://dy0k4h210iiyt" path="res://Fonts/Daydream.ttf" id="3_j3cbq"]
+[ext_resource type="FontFile" path="res://Fonts/SmallFont.tres" id="4_2funo"]
+[ext_resource type="AudioStream" uid="uid://gkxs5tb3xikk" path="res://assets/Audio/Music/Cisco Kid Funktion-analog mastering CSM.wav" id="5_j85ca"]
+
+[sub_resource type="Theme" id="Theme_ukqmh"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f1ta0"]
+texture = ExtResource("2_0cpmf")
+
+[node name="level_select" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_ukqmh")
+script = ExtResource("1_3pjre")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_f1ta0")
+
+[node name="Levels" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -370.0
+offset_top = -32.0
+offset_right = 370.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Levels"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Stage1" type="Button" parent="Levels/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("3_j3cbq")
+text = "Speedy  Sands"
+icon_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Levels"]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="Stage2" type="Button" parent="Levels/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("3_j3cbq")
+text = "Alpine  Apex"
+
+[node name="Label" type="Label" parent="Levels/VBoxContainer2"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("4_2funo")
+theme_override_font_sizes/font_size = 8
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="Levels"]
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="Stage3" type="Button" parent="Levels/VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("3_j3cbq")
+text = "Monster  Motorway"
+
+[node name="Label" type="Label" parent="Levels/VBoxContainer3"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("4_2funo")
+theme_override_font_sizes/font_size = 8
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_j85ca")
+volume_db = -24.299
+autoplay = true
+
+[connection signal="pressed" from="Levels/VBoxContainer/Stage1" to="." method="_on_stage_1_pressed"]
+[connection signal="pressed" from="Levels/VBoxContainer2/Stage2" to="." method="_on_stage_2_pressed"]
+[connection signal="pressed" from="Levels/VBoxContainer3/Stage3" to="." method="_on_stage_3_pressed"]

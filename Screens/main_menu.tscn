@@ -1,0 +1,210 @@
+[gd_scene load_steps=10 format=3 uid="uid://e2b3543knsmm"]
+
+[ext_resource type="Script" path="res://Screens/main_menu.gd" id="1_h6ni7"]
+[ext_resource type="Texture2D" uid="uid://bhggvluwh8w1t" path="res://assets/Background/Mountain-Dusk.png" id="2_qkd3q"]
+[ext_resource type="FontFile" uid="uid://dy0k4h210iiyt" path="res://Fonts/Daydream.ttf" id="3_tdflg"]
+[ext_resource type="AudioStream" uid="uid://bti8fmovr0krk" path="res://assets/Audio/SFX/confirmation_002.ogg" id="4_je6av"]
+[ext_resource type="AudioStream" uid="uid://dihmcw8d6njyi" path="res://assets/Audio/SFX/click_002.ogg" id="5_3kxf4"]
+[ext_resource type="AudioStream" uid="uid://csovvvrrmdpt5" path="res://assets/Audio/Music/Cisco Kid - Untiltled (maquette loop) -6db.mp3" id="6_ti3m1"]
+[ext_resource type="AudioStream" uid="uid://ctl3qkwpiwi1p" path="res://assets/Audio/Music/Group B Monsters - with pure engine sounds-[AudioTrimmer.com].mp3" id="7_2n5qf"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5fmwt"]
+texture = ExtResource("2_qkd3q")
+
+[sub_resource type="Theme" id="Theme_boo31"]
+
+[node name="mainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = 8.0
+offset_right = 11.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("1_h6ni7")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1293.0
+offset_top = -4.0
+offset_bottom = -15.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_5fmwt")
+
+[node name="MainMenu" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.5
+offset_top = 92.0
+offset_right = 240.5
+offset_bottom = 436.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+alignment = 1
+
+[node name="Start" type="Button" parent="MainMenu"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_neighbor_top = NodePath("../Quit")
+theme_override_fonts/font = ExtResource("3_tdflg")
+theme_override_font_sizes/font_size = 30
+text = "Start"
+
+[node name="Records" type="Button" parent="MainMenu"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_tdflg")
+theme_override_font_sizes/font_size = 30
+text = "Records"
+
+[node name="Options" type="Button" parent="MainMenu"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_tdflg")
+theme_override_font_sizes/font_size = 30
+text = "Options"
+
+[node name="Quit" type="Button" parent="MainMenu"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_neighbor_bottom = NodePath("../Start")
+theme = SubResource("Theme_boo31")
+theme_override_fonts/font = ExtResource("3_tdflg")
+theme_override_font_sizes/font_size = 30
+text = "Quit"
+
+[node name="MR" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.5
+offset_top = -246.0
+offset_right = 61.5
+offset_bottom = -156.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 7
+theme_override_fonts/font = ExtResource("3_tdflg")
+theme_override_font_sizes/font_size = 50
+text = "Mountain Rush "
+
+[node name="AGAR" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -197.5
+offset_top = -174.0
+offset_right = 197.5
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_outline_size = 7
+theme_override_fonts/font = ExtResource("3_tdflg")
+theme_override_font_sizes/font_size = 23
+text = "A Game About Rally "
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = -135.0
+offset_right = 311.0
+offset_bottom = -16.0
+grow_vertical = 0
+
+[node name="Credit1" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_tdflg")
+theme_override_font_sizes/font_size = 12
+text = "By Todd Dotter
+Marywood University 
+2024"
+
+[node name="Credit 2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_tdflg")
+theme_override_font_sizes/font_size = 15
+text = "Music by Cisco Kid"
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_tdflg")
+theme_override_font_sizes/font_size = 12
+text = "Dedicated  To  CJB 
+"
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_je6av")
+volume_db = -26.243
+
+[node name="Hover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_3kxf4")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_ti3m1")
+volume_db = -20.411
+autoplay = true
+parameters/looping = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_2n5qf")
+volume_db = -34.996
+autoplay = true
+parameters/looping = true
+
+[node name="Version" type="Label" parent="."]
+layout_mode = 1
+offset_left = 9.0
+offset_top = 2.0
+offset_right = 313.0
+offset_bottom = 23.0
+size_flags_vertical = 6
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_tdflg")
+theme_override_font_sizes/font_size = 13
+text = "Version 1.0.0
+"
+
+[connection signal="focus_entered" from="MainMenu/Start" to="." method="_on_start_focus_entered"]
+[connection signal="mouse_entered" from="MainMenu/Start" to="." method="_on_start_mouse_entered"]
+[connection signal="pressed" from="MainMenu/Start" to="." method="_on_start_pressed"]
+[connection signal="focus_entered" from="MainMenu/Records" to="." method="_on_records_focus_entered"]
+[connection signal="mouse_entered" from="MainMenu/Records" to="." method="_on_records_mouse_entered"]
+[connection signal="pressed" from="MainMenu/Records" to="." method="_on_records_pressed"]
+[connection signal="focus_entered" from="MainMenu/Options" to="." method="_on_options_focus_entered"]
+[connection signal="mouse_entered" from="MainMenu/Options" to="." method="_on_options_mouse_entered"]
+[connection signal="pressed" from="MainMenu/Options" to="." method="_on_options_pressed"]
+[connection signal="focus_entered" from="MainMenu/Quit" to="." method="_on_quit_focus_entered"]
+[connection signal="mouse_entered" from="MainMenu/Quit" to="." method="_on_quit_mouse_entered"]
+[connection signal="pressed" from="MainMenu/Quit" to="." method="_on_quit_pressed"]
