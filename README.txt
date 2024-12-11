@@ -1,0 +1,1 @@
+In order to run, you must have the .exe and .pck in the same directory. IT WILL NOT WORK OTHERWISE
